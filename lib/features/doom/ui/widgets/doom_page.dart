@@ -36,6 +36,7 @@ class DoomPage extends StatelessWidget {
             description: product.description,
             subDescription: product.properties,
             costs: product.costs,
+            condition: product.condition,
             onAsk: () {},
             onBuy: () {},
           ),

@@ -45,8 +45,7 @@ class ScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     EdgeInsets? effectiveListPadding = viewPaddingAsListPadding ? InheritedListPadding.of(context) + viewPadding : null;
-    EdgeInsetsGeometry effectiveViewPadding =
-        viewPaddingAsListPadding || !applyViewPadding ? EdgeInsets.zero : viewPadding;
+    EdgeInsetsGeometry effectiveViewPadding = viewPaddingAsListPadding || !applyViewPadding ? EdgeInsets.zero : viewPadding;
 
     Widget body = _Body(
       listPadding: effectiveListPadding,

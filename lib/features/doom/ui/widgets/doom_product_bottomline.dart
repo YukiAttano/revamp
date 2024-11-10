@@ -3,15 +3,19 @@ import "dart:ui";
 import "package:flutter/material.dart";
 
 import "../../../../shared/data/money.dart";
+import "../../../../shared/ui/widgets/basic/tag.dart";
 import "../../../../shared/ui/widgets/button/ask_button.dart";
 import "../../../../shared/ui/widgets/button/buy_button.dart";
 import "../../../../shared/ui/widgets/gap.dart";
 import "../../../../shared/ui/widgets/money_tag.dart";
+import "../../../../shared/ui/widgets/styles/tag_style.dart";
+import "condition_tag.dart";
 
 class DoomProductBottomline extends StatelessWidget {
   final String description;
   final String subDescription;
   final Money costs;
+  final String condition;
   final void Function()? onAsk;
   final void Function()? onBuy;
 
@@ -20,6 +24,7 @@ class DoomProductBottomline extends StatelessWidget {
     this.description = "",
     this.subDescription = "",
     required this.costs,
+    this.condition = "",
     this.onAsk,
     this.onBuy,
   });
@@ -31,7 +36,12 @@ class DoomProductBottomline extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MoneyTag(money: costs),
+        Row(
+          children: [
+            MoneyTag(money: costs),
+            ConditionTag(condition: condition),
+          ],
+        ),
         DecoratedBox(
           decoration: BoxDecoration(
             gradient: LinearGradient(
