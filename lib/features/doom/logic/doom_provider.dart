@@ -60,7 +60,7 @@ class _Data {
     title: "Levi's Courtright Sneaker",
     description: "Your best Friend",
     likes: 50,
-    costs: Money(amount: 20, currency: "EUR"),
+    costs: Money(amount: 2000, currency: "EUR"),
     condition: "Like New",
     properties: "Medium, Men, Brown",
     imageUrls: [
@@ -75,7 +75,7 @@ class _Data {
     title: "Winddichte Jacke",
     description: "Winddichte Winterjacke aus Fleece",
     likes: 20,
-    costs: Money(amount: 20, currency: "EUR"),
+    costs: Money(amount: 4500, currency: "EUR"),
     condition: "Worn",
     properties: "Large, Men, Black",
     imageUrls: [

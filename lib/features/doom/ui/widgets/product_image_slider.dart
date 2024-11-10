@@ -58,6 +58,8 @@ class _ProductImageSliderState extends State<ProductImageSlider> with SingleTick
                 (index) {
                   var image = widget.imageUrls[index];
 
+                  // TODO(Alex): Use BoxFit according to image ratio (e.g. Vertical or Horizontal image) and according
+                  //  to ScreenOrientation (Vertical Image: In Portrait BoxFit.cover, In Landscape BoxFit.contain; vice versa for Horizontal image)
                   return Image.network(image);
                 },
               ),

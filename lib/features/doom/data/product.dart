@@ -26,7 +26,7 @@ class Product with _$Product {
       title: "Product Title",
       description: "Product Description That shouldn't be that Long",
       likes: 50,
-      costs: Money(amount: 20, currency: "EUR"),
+      costs: Money(amount: 20000, currency: "EUR"),
       condition: "Product Condition",
       properties: "Property, List",
       imageUrls: ["https://m.media-amazon.com/images/I/71z2FWZWPrL._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/71EJEqX3+8L._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/81oAHaIG3nL._AC_SL1500_.jpg"],
