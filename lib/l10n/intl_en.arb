@@ -1,0 +1,253 @@
+{
+  "@@locale": "en",
+  "@_BUTTONS": {},
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "locked": "Locked",
+  "accept": "Accept",
+  "abort": "Abort",
+  "password": "Password",
+  "register": "Register",
+  "login": "Login",
+  "logout": "Logout",
+  "refresh": "Refresh",
+  "settings": "Settings",
+  "general": "General",
+  "privacy": "Privacy",
+  "imprint": "Imprint",
+  "surveys": "Surveys",
+  "ok": "Ok",
+  "apply": "Apply",
+  "filter": "Filter",
+  "save": "Save",
+  "reset": "Reset",
+  "begin_check": "Begin Check",
+  "abort_and_return_check": "Abort and return Check",
+  "delete_changes": "Delete changes",
+  "forgot_password": "Forgot Password?",
+  "request_password": "Request Password",
+  "create_account": "Create User?",
+  "close_app": "Close App",
+  "@_WIDGETS": {},
+  "warning": "Warning",
+  "loggedin": "Logged In",
+  "email": "Email",
+  "gender": "Gender",
+  "salutation": "Salutation",
+  "first_name": "Firstname",
+  "last_name": "Lastname",
+  "phone_number_1": "Phone 1",
+  "phone_number_1_hint": "e.g. Smartphone number",
+  "phone_number_2": "Phone 2",
+  "phone_number_2_hint": "e.g. Landline number",
+  "vatno": "VAT number",
+  "vatno_hint": "Valued Added Tax",
+  "username": "Username",
+  "inquiry": "Inquiry",
+  "birthday": "Birthday",
+  "address": "Address",
+  "billing_info": "Billing Information",
+  "bank_details": "Bank details",
+  "achievement": "Achievement",
+  "median": "Average",
+  "no_description": "no description",
+  "bankname": "Bank name",
+  "account_number": "Account number",
+  "swift_code": "Swift code",
+  "account_name": "Account name",
+  "last_saved": "Last saved: ",
+  "@_address": {},
+  "country": "Country",
+  "state": "State",
+  "city": "City",
+  "zip": "Zip Code",
+  "street": "Street",
+  "marker_label": "Check",
+  "@_date": {},
+  "yesterday": "Yesterday",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "unbounded_date": "Without time restriction",
+  "from_date": "von {date}",
+  "@from_date": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "until_date": "bis {date}",
+  "@until_date": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "start_at_date": "startet am {date}",
+  "@start_at_date": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "end_at_date": "ended am {date}",
+  "@end_at_date": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "before_x_weeks": "Before {week, plural,=0{This week} =1{1 week} other{{week} weeks}}",
+  "@before_x_weeks": {
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "in_x_weeks": "In {week, plural,=0{This week} =1{1 week} other{{week} weeks}}",
+  "@in_x_weeks": {
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "before_x_days": "Before {day, plural,=0{Today} =1{1 day} other{{day} days}}",
+  "@before_x_days": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "in_x_days": "In {day, plural,=0{Today} =1{1 day} other{{day} days}}",
+  "@in_x_days": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "before_x_hours": "Before {hour, plural, =1{1 hour} other{{hour} hours}}",
+  "@before_x_hours": {
+    "placeholders": {
+      "hour": {
+        "type": "int"
+      }
+    }
+  },
+  "in_x_hours": "In {hour, plural, =1{1 hour} other{{hour} hours}}",
+  "@in_x_hours": {
+    "placeholders": {
+      "hour": {
+        "type": "int"
+      }
+    }
+  },
+  "before_x_minutes": "{min, plural, =0{Just now} =1{einer Minute} other{{min} Minuten}}",
+  "@before_x_minutes": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "in_x_minutes": "{min, plural,=0{Now} =1{In a minute} other{in {min} minutes}}",
+  "@in_x_minutes": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "never": "Never",
+  "@_SCREENS": {},
+  "screen_home": "Home",
+  "screen_imprint": "Imprint",
+  "screen_license": "License",
+  "screen_privacy": "Privacy",
+  "screen_settings": "Settings",
+  "screen_profile": "Profile",
+  "screen_gallery": "Gallery",
+  "screen_personal_info": "Personal Info",
+  "screen_billing_info": "Billing Information",
+  "screen_notification": "Notifications",
+  "screen_check_info": "Information",
+  "screen_check_overview": "Check Overview",
+  "screen_stats": "Statistics",
+  "@_DAYS": {},
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "@_DAYS_short": {},
+  "monday_short": "Mon",
+  "tuesday_short": "Tue",
+  "wednesday_short": "Wed",
+  "thursday_short": "Thu",
+  "friday_short": "Fri",
+  "saturday_short": "Sa",
+  "sunday_short": "Sun",
+  "@_MONTH": {},
+  "january": "January",
+  "february": "February",
+  "march": "March",
+  "april": "April",
+  "may": "May",
+  "june": "June",
+  "july": "July",
+  "august": "August",
+  "september": "September",
+  "october": "October",
+  "november": "November",
+  "december": "December",
+  "@_MONTH_short": {},
+  "january_short": "Jan",
+  "february_short": "Feb",
+  "march_short": "Mar",
+  "april_short": "Apr",
+  "may_short": "May",
+  "june_short": "Jun",
+  "july_short": "Jul",
+  "august_short": "Aug",
+  "september_short": "Sep",
+  "october_short": "Oct",
+  "november_short": "Nov",
+  "december_short": "Dec",
+  "@_MESSAGES": {},
+  "message_enter_valid_email_like": "name@adresse.com",
+  "message_password_is_empty": "The password cannot be empty",
+  "message_enter_secure_password": "Secure password",
+  "message_wait_for_login": "Logging in, please wait...",
+  "message_sending_email": "Sending email...",
+  "message_wait_for_logout": "Logging out, please wait...",
+  "message_enter_registered_email": "Enter your registered email",
+  "message_password_email_send": "Password reset mail send to {email}",
+  "@message_password_email_send": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@_EXCEPTIONS": {},
+  "exception_unknown": "An error occurred, please try again later",
+  "exception_parse": "The received data is malformed",
+  "exception_invalid_input_data_received": "The data received is invalid. Please check for an new app version",
+  "exception_network_connection_timeout": "A connection error occurred, please try again",
+  "exception_network_send_timeout": "A connection error occurred, please try again",
+  "exception_network_receive_timeout": "A connection error occurred, please try again",
+  "exception_network_bad_certificate": "The connection could not be established, please try again",
+  "exception_network_bad_response": "An error occurred, please try again",
+  "exception_network_cancel": "The connection was cancelled, please try again",
+  "exception_network_connection_error": "The connection could not be established, please try again",
+  "exception_network_unknown": "A network error occurred, please try again",
+  "exception_localized_format": "An error occurred, please check for a new app version"
+}
