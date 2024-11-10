@@ -167,6 +167,7 @@
   "never": "Never",
   "@_SCREENS": {},
   "screen_home": "Home",
+  "screen_doom": "Your Feed",
   "screen_imprint": "Imprint",
   "screen_license": "License",
   "screen_privacy": "Privacy",

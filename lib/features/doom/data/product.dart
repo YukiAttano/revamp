@@ -16,17 +16,19 @@ class Product with _$Product {
     required Money costs,
     required String condition,
     required String properties,
+    required List<String> imageUrls,
   }) = _Product;
 
   factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
 
   static Product dummy = Product(
       id: 0,
-      title: "Yogapants",
-      description: "Headline description",
+      title: "Product Title",
+      description: "Product Description That shouldn't be that Long",
       likes: 50,
       costs: Money(amount: 20, currency: "EUR"),
-      condition: "Like New",
-      properties: "Medium, Winter, Pink"
+      condition: "Product Condition",
+      properties: "Property, List",
+      imageUrls: ["https://m.media-amazon.com/images/I/71z2FWZWPrL._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/71EJEqX3+8L._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/81oAHaIG3nL._AC_SL1500_.jpg"],
   );
 }

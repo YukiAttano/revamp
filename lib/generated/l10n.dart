@@ -836,6 +836,16 @@ class S {
     );
   }
 
+  /// `Your Feed`
+  String get screen_doom {
+    return Intl.message(
+      'Your Feed',
+      name: 'screen_doom',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Imprint`
   String get screen_imprint {
     return Intl.message(

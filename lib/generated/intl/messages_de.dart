@@ -197,6 +197,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("Speichern"),
         "screen_billing_info":
             MessageLookupByLibrary.simpleMessage("Rechnungsinformationen"),
+        "screen_doom": MessageLookupByLibrary.simpleMessage("Dein Feed"),
         "screen_gallery": MessageLookupByLibrary.simpleMessage("Gallerie"),
         "screen_home": MessageLookupByLibrary.simpleMessage("Home"),
         "screen_imprint": MessageLookupByLibrary.simpleMessage("Impressum"),

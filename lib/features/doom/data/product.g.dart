@@ -15,6 +15,8 @@ _$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
       costs: Money.fromJson(json['costs'] as Map<String, dynamic>),
       condition: json['condition'] as String,
       properties: json['properties'] as String,
+      imageUrls:
+          (json['imageUrls'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
@@ -26,4 +28,5 @@ Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
       'costs': instance.costs,
       'condition': instance.condition,
       'properties': instance.properties,
+      'imageUrls': instance.imageUrls,
     };

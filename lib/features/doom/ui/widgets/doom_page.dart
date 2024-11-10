@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import "../../data/product.dart";
 import "doom_product_bottomline.dart";
 import "doom_product_headline.dart";
+import "product_image_slider.dart";
 
 class DoomPage extends StatelessWidget {
   final Product product;
@@ -14,10 +15,7 @@ class DoomPage extends StatelessWidget {
     return Stack(
       children: [
         Positioned.fill(
-          child: Image.network(
-            "https://as2.ftcdn.net/v2/jpg/04/57/92/25/1000_F_457922518_grtXDz7A6pyAIqHoC6BpUOo8JkFtKIof.jpg",
-            fit: BoxFit.fill,
-          ),
+          child: ProductImageSlider(imageUrls: product.imageUrls),
         ),
         Positioned(
           left: 0,

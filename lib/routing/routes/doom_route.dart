@@ -25,5 +25,5 @@ class DoomRoute extends UiRouteData with RouteTransitionPageBuilder<DoomScreen>{
   String get loc => location;
 
   @override
-  String localize(S s) => s.ok;
+  String localize(S s) => s.screen_doom;
 }

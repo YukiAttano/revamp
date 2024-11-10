@@ -1,4 +1,6 @@
+import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
+import "package:ux_improvements/ux_improvements.dart";
 
 import "../../../../shared/ui/widgets/layout/screen_view.dart";
 import "../../../../shared/ui/widgets/views/adaptive_refresh_page_view.dart";
@@ -8,7 +10,7 @@ import "../widgets/doom_product_headline.dart";
 
 class DoomView extends StatefulWidget {
   final List<Product> products;
-  final RefreshCallback onRefresh;
+  final RefreshCallback? onRefresh;
   final void Function(int id)? onSelected;
 
   const DoomView({super.key, required this.products, required this.onRefresh, this.onSelected})
@@ -19,6 +21,10 @@ class DoomView extends StatefulWidget {
 }
 
 class _DoomViewState extends State<DoomView> {
+
+  static const CupertinoSliverRefreshControlConfiguration _cupertinoConfig = CupertinoSliverRefreshControlConfiguration();
+  bool _isCupertinoRefreshVisible = false;
+
   final PageController _controller = PageController();
 
   bool _showShadow = false;
@@ -36,11 +42,16 @@ class _DoomViewState extends State<DoomView> {
     _controller.addListener(
       () {
         int currentPage = _controller.page!.round();
+
         if (currentPage != _lastPage) {
           _lastPage = currentPage;
           _onPageChanged(currentPage);
         }
-        bool showShadow = _controller.offset >= 0;
+
+        // see _onRefresh to understand why we track the values
+        double minOffset = _isCupertinoRefreshVisible ? _cupertinoConfig.refreshIndicatorExtent : 0;
+
+        bool showShadow = _controller.offset >= minOffset;
         if (showShadow != _showShadow) {
           setState(() => _showShadow = showShadow);
         }
@@ -71,7 +82,7 @@ class _DoomViewState extends State<DoomView> {
           children: [
             Positioned.fill(
               child: AdaptiveRefreshPageView.builder(
-                onRefresh: widget.onRefresh,
+                onRefresh: widget.onRefresh != null ? () async => _onRefresh(context) : null,
                 controller: _controller,
                 itemCount: widget.products.length,
                 builder: (context, index) {
@@ -101,6 +112,25 @@ class _DoomViewState extends State<DoomView> {
 
   void _onPageChanged(int page) {
     setState(() => _selectedIndex = page);
+  }
+
+  /// tracks whether the CupertinoSpinner is active to properly calculate [_showShadow]
+  /// to avoid a visual bug.
+  /// (if the spinner is visible, scrolling down and up again will let the shadow stay visible)
+  Future<void> _onRefresh(BuildContext context) async {
+    assert(widget.onRefresh != null, "onRefresh must not be null");
+
+    // TODO(Alex): hold this in sync with RefreshIndicator.adaptive RefreshIndicator logic
+    //  to properly track whether the CupertinoSpinner is visible or not.
+    TargetPlatform platform = Theme.of(context).platform;
+    bool useMaterial = platform != TargetPlatform.iOS && platform != TargetPlatform.macOS;
+
+    if (!useMaterial) setState(() => _isCupertinoRefreshVisible = true);
+    try {
+      await widget.onRefresh!();
+    } finally {
+      if (mounted && !useMaterial) setState(() => _isCupertinoRefreshVisible = false);
+    }
   }
 
   @override

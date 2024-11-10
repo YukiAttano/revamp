@@ -203,6 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Information"),
         "screen_check_overview":
             MessageLookupByLibrary.simpleMessage("Check Overview"),
+        "screen_doom": MessageLookupByLibrary.simpleMessage("Your Feed"),
         "screen_gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
         "screen_home": MessageLookupByLibrary.simpleMessage("Home"),
         "screen_imprint": MessageLookupByLibrary.simpleMessage("Imprint"),

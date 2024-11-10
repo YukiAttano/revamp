@@ -27,6 +27,7 @@ mixin _$Product {
   Money get costs => throw _privateConstructorUsedError;
   String get condition => throw _privateConstructorUsedError;
   String get properties => throw _privateConstructorUsedError;
+  List<String> get imageUrls => throw _privateConstructorUsedError;
 
   /// Serializes this Product to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +50,8 @@ abstract class $ProductCopyWith<$Res> {
       int likes,
       Money costs,
       String condition,
-      String properties});
+      String properties,
+      List<String> imageUrls});
 
   $MoneyCopyWith<$Res> get costs;
 }
@@ -76,6 +78,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? costs = null,
     Object? condition = null,
     Object? properties = null,
+    Object? imageUrls = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -106,6 +109,10 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrls: null == imageUrls
+          ? _value.imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 
@@ -134,7 +141,8 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
       int likes,
       Money costs,
       String condition,
-      String properties});
+      String properties,
+      List<String> imageUrls});
 
   @override
   $MoneyCopyWith<$Res> get costs;
@@ -160,6 +168,7 @@ class __$$ProductImplCopyWithImpl<$Res>
     Object? costs = null,
     Object? condition = null,
     Object? properties = null,
+    Object? imageUrls = null,
   }) {
     return _then(_$ProductImpl(
       id: null == id
@@ -190,6 +199,10 @@ class __$$ProductImplCopyWithImpl<$Res>
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrls: null == imageUrls
+          ? _value._imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -204,7 +217,9 @@ class _$ProductImpl implements _Product {
       required this.likes,
       required this.costs,
       required this.condition,
-      required this.properties});
+      required this.properties,
+      required final List<String> imageUrls})
+      : _imageUrls = imageUrls;
 
   factory _$ProductImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductImplFromJson(json);
@@ -223,10 +238,17 @@ class _$ProductImpl implements _Product {
   final String condition;
   @override
   final String properties;
+  final List<String> _imageUrls;
+  @override
+  List<String> get imageUrls {
+    if (_imageUrls is EqualUnmodifiableListView) return _imageUrls;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_imageUrls);
+  }
 
   @override
   String toString() {
-    return 'Product(id: $id, title: $title, description: $description, likes: $likes, costs: $costs, condition: $condition, properties: $properties)';
+    return 'Product(id: $id, title: $title, description: $description, likes: $likes, costs: $costs, condition: $condition, properties: $properties, imageUrls: $imageUrls)';
   }
 
   @override
@@ -243,13 +265,23 @@ class _$ProductImpl implements _Product {
             (identical(other.condition, condition) ||
                 other.condition == condition) &&
             (identical(other.properties, properties) ||
-                other.properties == properties));
+                other.properties == properties) &&
+            const DeepCollectionEquality()
+                .equals(other._imageUrls, _imageUrls));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, title, description, likes, costs, condition, properties);
+      runtimeType,
+      id,
+      title,
+      description,
+      likes,
+      costs,
+      condition,
+      properties,
+      const DeepCollectionEquality().hash(_imageUrls));
 
   /// Create a copy of Product
   /// with the given fields replaced by the non-null parameter values.
@@ -275,7 +307,8 @@ abstract class _Product implements Product {
       required final int likes,
       required final Money costs,
       required final String condition,
-      required final String properties}) = _$ProductImpl;
+      required final String properties,
+      required final List<String> imageUrls}) = _$ProductImpl;
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$ProductImpl.fromJson;
 
@@ -293,6 +326,8 @@ abstract class _Product implements Product {
   String get condition;
   @override
   String get properties;
+  @override
+  List<String> get imageUrls;
 
   /// Create a copy of Product
   /// with the given fields replaced by the non-null parameter values.

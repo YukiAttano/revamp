@@ -80,6 +80,7 @@
   "never": "Nie",
   "@_SCREENS": {},
   "screen_home": "Home",
+  "screen_doom": "Dein Feed",
   "screen_imprint": "Impressum",
   "screen_license": "Lizenzen",
   "screen_privacy": "Datenschutz",

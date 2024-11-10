@@ -3,13 +3,13 @@ import "package:sliver_tools/sliver_tools.dart";
 import "package:ux_improvements/ux_improvements.dart";
 
 import "../../../logic/page_physics.dart";
-import "../layout/titled_list_view.dart";
 
 class AdaptiveRefreshPageView extends StatelessWidget {
   final PageController? controller;
   final ScrollPhysics? physics;
   final bool pageSnapping;
   final RefreshCallback? onRefresh;
+  final CupertinoSliverRefreshControlConfiguration? cupertinoConfig;
   final Widget _sliver;
 
   AdaptiveRefreshPageView.builder({
@@ -18,6 +18,7 @@ class AdaptiveRefreshPageView extends StatelessWidget {
     this.physics,
     this.pageSnapping = true,
     this.onRefresh,
+    this.cupertinoConfig,
     required int? itemCount,
     required NullableIndexedWidgetBuilder builder,
   }) : _sliver = _SliverEndlessPages(itemCount: itemCount, builder: builder);
@@ -28,6 +29,7 @@ class AdaptiveRefreshPageView extends StatelessWidget {
     this.physics,
     this.pageSnapping = true,
     this.onRefresh,
+    this.cupertinoConfig,
     required int itemCount,
     required Widget Function(int index) buildTitleSliver,
     required Widget Function(int index) buildSliver,
@@ -41,6 +43,7 @@ class AdaptiveRefreshPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdaptiveRefreshIndicator(
       config: CustomScrollViewConfiguration(controller: controller),
+      cupertinoConfig: cupertinoConfig,
       physics: getPagePhysics(context: context, physics: physics, pageSnapping: pageSnapping),
       onRefresh: onRefresh,
       sliver: _sliver,
