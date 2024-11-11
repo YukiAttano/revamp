@@ -2,6 +2,8 @@ import "dart:ui";
 
 import "package:flutter/material.dart";
 
+import "../../../logic/theme_data_surface_tint_extension.dart";
+
 class TagStyle extends ThemeExtension<TagStyle> {
   final EdgeInsets? padding;
   final Color? color;
@@ -60,7 +62,17 @@ class TagStyle extends ThemeExtension<TagStyle> {
     return TagStyle(
       color: color,
       textStyle: textStyle,
-      iconColor: iconColor
+      iconColor: iconColor,
+    );
+  }
+
+  factory TagStyle.rect() {
+    const EdgeInsets padding = EdgeInsets.all(6);
+    ShapeBorder? shape = const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8)));
+
+    return TagStyle(
+      padding: padding,
+      shape: shape,
     );
   }
 
@@ -70,6 +82,22 @@ class TagStyle extends ThemeExtension<TagStyle> {
     s = s.merge(style);
 
     return s;
+  }
+
+  TagStyle disabled(BuildContext context) {
+    assert(textStyle != null, "A textStyle must exist as lerping does only work with TextThemes from ThemeData");
+    ThemeData theme = Theme.of(context);
+    ColorScheme scheme = theme.colorScheme;
+
+    Color? color = scheme.onSurface.withOpacity(0.12);
+    Color? textColor = theme.disabledColor;
+    Color? iconColor = theme.disabledColor;
+
+    return copyWith(
+      color: color,
+      textStyle: textStyle!.copyWith(color: textColor),
+      iconColor: iconColor,
+    );
   }
 
   @override
@@ -87,7 +115,7 @@ class TagStyle extends ThemeExtension<TagStyle> {
       elevation: elevation ?? this.elevation,
       textStyle: textStyle ?? this.textStyle,
       iconColor: iconColor ?? this.iconColor,
-      shape: shape?? this.shape,
+      shape: shape ?? this.shape,
     );
   }
 

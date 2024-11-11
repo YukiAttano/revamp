@@ -36,6 +36,7 @@ class Theming {
       //bottomNavigationBarTheme: _getBottomNavigationBarThemeData(scheme),
       tooltipTheme: _getTooltipThemeData(),
       appBarTheme: _getAppBarTheme(scheme),
+      listTileTheme: _getListTileThemeData(),
       pageTransitionsTheme: const PageTransitionsTheme(builders: {
         TargetPlatform.android: FadeThroughPageTransitionsBuilder(),
       }),
@@ -75,6 +76,15 @@ class Theming {
   TooltipThemeData _getTooltipThemeData() {
     return const TooltipThemeData(
       margin: EdgeInsets.symmetric(horizontal: 24),
+    );
+  }
+
+  ListTileThemeData _getListTileThemeData() {
+    return const ListTileThemeData(
+      contentPadding: EdgeInsets.symmetric(horizontal: 4),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
     );
   }
 

@@ -15,7 +15,9 @@ class SettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Tag(child: Icon(icon)),
+      leading: Tag.rect(
+        child: Icon(icon),
+      ),
       title: Text(label),
       onTap: onPressed,
     );
