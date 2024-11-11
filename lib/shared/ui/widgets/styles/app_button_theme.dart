@@ -73,10 +73,10 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
     if (other is! AppButtonTheme) return this;
 
     return copyWith(
-      mediumStyle: other.mediumStyle,
-      mediumErrorStyle: other.mediumErrorStyle,
-      highStyle: other.highStyle,
-      highErrorStyle: other.highErrorStyle,
+      mediumStyle: other.mediumStyle?.merge(mediumStyle),
+      mediumErrorStyle: other.mediumErrorStyle?.merge(mediumErrorStyle),
+      highStyle: other.highStyle?.merge(highStyle),
+      highErrorStyle: other.highErrorStyle?.merge(highErrorStyle),
     );
   }
 

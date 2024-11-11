@@ -2,6 +2,8 @@ import "package:animations/animations.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 
+import "shared/ui/widgets/styles/app_button_theme.dart";
+
 class Theming {
   static const Color _fallbackColor = Colors.green;
 
@@ -29,18 +31,20 @@ class Theming {
 
   ThemeData _getTheme(ColorScheme scheme) {
     return ThemeData(
-      colorScheme: scheme,
-      inputDecorationTheme: _getInputDecorationTheme(),
-      navigationRailTheme: _getNavigationRailThemeData(scheme),
-      navigationBarTheme: _getNavigationBarThemeData(scheme),
-      //bottomNavigationBarTheme: _getBottomNavigationBarThemeData(scheme),
-      tooltipTheme: _getTooltipThemeData(),
-      appBarTheme: _getAppBarTheme(scheme),
-      listTileTheme: _getListTileThemeData(),
-      pageTransitionsTheme: const PageTransitionsTheme(builders: {
-        TargetPlatform.android: FadeThroughPageTransitionsBuilder(),
-      }),
-    );
+        colorScheme: scheme,
+        inputDecorationTheme: _getInputDecorationTheme(),
+        navigationRailTheme: _getNavigationRailThemeData(scheme),
+        navigationBarTheme: _getNavigationBarThemeData(scheme),
+        //bottomNavigationBarTheme: _getBottomNavigationBarThemeData(scheme),
+        tooltipTheme: _getTooltipThemeData(),
+        appBarTheme: _getAppBarTheme(scheme),
+        listTileTheme: _getListTileThemeData(),
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.android: FadeThroughPageTransitionsBuilder(),
+        }),
+        extensions: [
+          _getAppButtonTheme(scheme),
+        ]);
   }
 
   InputDecorationTheme _getInputDecorationTheme() {
@@ -85,6 +89,19 @@ class Theming {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
+    );
+  }
+
+  AppButtonTheme _getAppButtonTheme(ColorScheme scheme) {
+    bool darkMode = scheme.brightness == Brightness.light;
+
+    RoundedRectangleBorder shape = const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)));
+
+    return AppButtonTheme(
+      highStyle: darkMode
+          ? ElevatedButton.styleFrom(backgroundColor: Colors.black, foregroundColor: Colors.white, shape: shape)
+          : ElevatedButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Colors.black, shape: shape),
+      highErrorStyle: ElevatedButton.styleFrom(shape: shape),
     );
   }
 

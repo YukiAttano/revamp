@@ -10,6 +10,7 @@ class BuyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppButton(
+      emphasis: Emphasis.HIGH,
       onPressed: onPressed,
       child: Text("Buy"),
     );
