@@ -60,6 +60,8 @@ class Theming {
     return NavigationBarThemeData(
       backgroundColor: scheme.secondaryContainer,
       indicatorColor: scheme.onSecondary,
+      labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+      height: 50,
     );
   }
 

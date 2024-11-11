@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import "../../../shared/ui/widgets/basic/tag.dart";
+
 class SettingsTile extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -13,7 +15,7 @@ class SettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon),
+      leading: Tag(child: Icon(icon)),
       title: Text(label),
       onTap: onPressed,
     );

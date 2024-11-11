@@ -33,50 +33,73 @@ class DoomProductBottomline extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO(Alex): Styling
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            MoneyTag(money: costs),
-            ConditionTag(condition: condition),
-          ],
-        ),
-        DecoratedBox(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              stops: const [0, 0.9, 1],
-              colors: [
-                Colors.grey,
-                Colors.grey.withOpacity(0.2),
-                Colors.transparent,
-              ],
-            ),
+    return ClipRect(
+      child: Stack(
+        children: [
+          const Positioned.fill(
+            child: _BackgroundBlur(),
           ),
-          child: Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _Description(description: description),
-                      Text(subDescription, maxLines: 1, overflow: TextOverflow.ellipsis),
-                    ],
-                  ),
-                ),
+              Row(
+                children: [
+                  MoneyTag(money: costs),
+                  ConditionTag(condition: condition),
+                ],
               ),
-              const Gap(),
-              AskButton(onPressed: onAsk),
-              const Gap(),
-              BuyButton(onPressed: onBuy),
+              Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _Description(description: description),
+                          Text(subDescription, maxLines: 1, overflow: TextOverflow.ellipsis),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const Gap(),
+                  AskButton(onPressed: onAsk),
+                  const Gap(),
+                  BuyButton(onPressed: onBuy),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _BackgroundBlur extends StatelessWidget {
+  final bool enabled;
+
+  const _BackgroundBlur({super.key, this.enabled = true});
+
+  @override
+  Widget build(BuildContext context) {
+    return ImageFiltered(
+      enabled: false,
+      imageFilter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            stops: const [0, 0.5, 0.8],
+            colors: [
+              Colors.grey,
+              Colors.grey.withOpacity(0.2),
+              Colors.transparent,
             ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

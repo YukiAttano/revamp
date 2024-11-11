@@ -14,7 +14,7 @@ class ConditionTag extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tag(
       style: TagStyle.error(context),
-      label: Text(condition),
+      child: Text(condition),
     );
   }
 }
