@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
-import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:ux_improvements/ux_improvements.dart";
 
-import "../logic/store_provider.dart";
+import "../../../shared/ui/widgets/inherited_list_padding.dart";
+import "../../../shared/ui/widgets/text_field/searchbar.dart";
 
 class StoreView extends StatelessWidget {
   final RefreshCallback? onRefresh;
@@ -13,17 +13,14 @@ class StoreView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdaptiveRefreshIndicator.slivers(
+      padding: InheritedListPadding.of(context),
       slivers: [
         SliverToBoxAdapter(
-          child: Placeholder(
-            child: Text("Searchbar"),
-            fallbackHeight: 120,
-          ),
+          child: Searchbar(),
         ),
         SliverToBoxAdapter(
           child: Placeholder(
-            child: Text("Aktionen"),
-            fallbackHeight: 350,
+            fallbackHeight: 140,
           ),
         ),
         SliverList.builder(itemBuilder: (context, index) {

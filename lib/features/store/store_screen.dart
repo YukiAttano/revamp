@@ -3,6 +3,7 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:ux_improvements/ux_improvements.dart";
 
 import "../../shared/logic/message_queue/message_queue.dart";
+import "../../shared/ui/widgets/layout/screen_view.dart";
 import "../doom/data/doom_snapshot.dart";
 import "../doom/logic/doom_provider.dart";
 import "data/store_snapshot.dart";
@@ -29,14 +30,14 @@ class StoreScreen extends ConsumerWidget {
         builder: (context) {
           Widget child;
 
-          return StoreView(
+          return _ContentView(
             onRefresh: onRefresh,
             // onSelected: (id) => _onGoToProduct(context, id),
           );
           if (snap.hasData) {
             child = StoreView(
               onRefresh: onRefresh,
-             // onSelected: (id) => _onGoToProduct(context, id),
+              // onSelected: (id) => _onGoToProduct(context, id),
             );
           } else if (snap.hasError) {
             child = StoreErrorView(
@@ -63,7 +64,23 @@ class StoreScreen extends ConsumerWidget {
     return ref.read(storeProvider.notifier).requestFromRemote(hideLoading: hideLoading);
   }
 
-  void _onPressed(BuildContext context, int id) {
+  void _onPressed(BuildContext context, int id) {}
+}
 
+class _ContentView extends StatelessWidget {
+  final void Function(int id)? onSelected;
+  final RefreshCallback? onRefresh;
+
+  const _ContentView({super.key, this.onRefresh, this.onSelected});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenView(
+      viewPaddingAsListPadding: true,
+      child: StoreView(
+        onRefresh: onRefresh,
+        onSelected: onSelected,
+      ),
+    );
   }
 }

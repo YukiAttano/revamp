@@ -3,8 +3,12 @@ import "dart:async";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 
 import "../../../../shared/logic/generic_state_notifier.dart";
+import "../../../shared/data/money.dart";
 import "../../../shared/logic/network/network_client.dart";
 import "../../../shared/logic/user_storage_handler.dart";
+import "../data/store_category.dart";
+import "../data/store_entry.dart";
+import "../data/store_product.dart";
 import "../data/store_snapshot.dart";
 import "repository/store_local_repository.dart";
 import "repository/store_remote_repository.dart";
@@ -21,7 +25,7 @@ final storeRepoProvider = Provider((ref) {
 
 final storeProvider = StateNotifierProvider<HomeNotifier, StoreSnapshot>(HomeNotifier.new);
 
-class HomeNotifier extends GenericStateNotifier<List<String>, StoreSnapshot> {
+class HomeNotifier extends GenericStateNotifier<List<StoreEntry>, StoreSnapshot> {
   final Ref _ref;
 
   StoreRepository get _repo => _ref.read(storeRepoProvider);
@@ -39,6 +43,9 @@ class HomeNotifier extends GenericStateNotifier<List<String>, StoreSnapshot> {
   }
 
   Future<void> readFromLocal({bool hideLoading = false, bool handleLoading = true}) {
+
+    state = state.copyWith(data: _dummy);
+
     return Future.value();
     //  return requestData(request: , hideLoading: hideLoading, handleLoading: handleLoading);
   }
@@ -54,3 +61,42 @@ class HomeNotifier extends GenericStateNotifier<List<String>, StoreSnapshot> {
     );*/
   }
 }
+
+
+List<StoreEntry> _dummy = [
+  StoreEntry(
+    category: StoreCategory(id: "0", name: "recently viewed"),
+    products: [
+      StoreProduct(
+        id: 0,
+        title: "Zero",
+        costs: Money(amount: 20, currency: "EUR"),
+      ),
+      StoreProduct(
+        id: 1,
+        title: "One",
+        costs: Money(amount: 40, currency: "EUR"),
+      ),
+    ],
+  ),
+  StoreEntry(
+    category: StoreCategory(id: "1", name: "most viewed"),
+    products: [
+      StoreProduct(
+        id: 2,
+        title: "Two",
+        costs: Money(amount: 20, currency: "EUR"),
+      ),
+      StoreProduct(
+        id: 3,
+        title: "Three",
+        costs: Money(amount: 40, currency: "EUR"),
+      ),
+      StoreProduct(
+        id: 4,
+        title: "Four",
+        costs: Money(amount: 40, currency: "EUR"),
+      ),
+    ],
+  ),
+];

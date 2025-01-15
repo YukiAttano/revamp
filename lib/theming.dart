@@ -39,6 +39,7 @@ class Theming {
         tooltipTheme: _getTooltipThemeData(),
         appBarTheme: _getAppBarTheme(scheme),
         listTileTheme: _getListTileThemeData(),
+        
         pageTransitionsTheme: const PageTransitionsTheme(builders: {
           TargetPlatform.android: FadeThroughPageTransitionsBuilder(),
         }),
@@ -49,7 +50,9 @@ class Theming {
 
   InputDecorationTheme _getInputDecorationTheme() {
     return const InputDecorationTheme(
-      border: OutlineInputBorder(),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(28))
+      ),
     );
   }
 

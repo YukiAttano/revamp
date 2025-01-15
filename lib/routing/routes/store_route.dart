@@ -2,7 +2,7 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 
-import "../../features/home/store_screen.dart";
+import "../../features/store/store_screen.dart";
 import "../../generated/l10n.dart";
 import "../basic_route_data.dart";
 import "../main_route.dart";
