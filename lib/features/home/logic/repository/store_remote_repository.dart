@@ -1,7 +1,7 @@
 import "../../../../shared/logic/network/network_client.dart";
 
-class HomeRemoteRepository {
+class StoreRemoteRepository {
   final NetworkClient client;
 
-  HomeRemoteRepository(this.client);
+  StoreRemoteRepository(this.client);
 }

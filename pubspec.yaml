@@ -86,8 +86,8 @@ dev_dependencies:
   go_router_builder: ^2.7.1
   json_serializable: ^6.7.1
   freezed: ^2.5.7
-  flutter_launcher_icons: ^0.14.1
-
+  flutter_launcher_icons: ^0.14.2 # dart run flutter_launcher_icons
+  icons_launcher: ^3.0.0          # dart run icons_launcher
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -151,20 +151,30 @@ flutter_intl:
   #  ota_enabled: # Set to true if you want to use Localizely Over-the-air functionality. Default: false
 
 flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
+  android: "revamp_icon"
   image_path_android: "assets/revamp_logo.png"
-  image_path_ios: "assets/revamp_logo.jpg"
   min_sdk_android: 21 # android min sdk min:16, default 21
+  remove_alpha_ios: true
+  ios:
+    image_path_ios_dark_transparent: "assets/revamp_logo.jpg"
+    desaturate_tinted_to_grayscale_ios: true
   web:
     generate: false
-    image_path: "assets/revamp_logo.png"
-    background_color: "#FFFFFFFF"
-    theme_color: "#FF00FF00"
   windows:
     generate: false
-  #  image_path: "path/to/image.png"
-  #  icon_size: 48 # min:48, max:256, default: 48
   macos:
     generate: false
-  #  image_path: "path/to/image.png"
+
+icons_launcher:
+  image_path: "assets/revamp_logo.png"
+  platforms:
+    android:
+      enable: true
+      notification_image: "assets/revamp_logo.png"
+      adaptive_round_image: "assets/revamp_logo.png"
+    ios:
+      enable: false
+      image_path: "assets/revamp_logo.jpg"
+      dark_path: "assets/revamp_logo.jpg"
+    web:
+      enable: false

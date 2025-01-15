@@ -29,8 +29,8 @@ RouteBase get $mainRoute => ShellRouteData.$route(
           factory: $NavigationShellExtension._fromState,
           routes: [
             GoRouteData.$route(
-              path: '/home',
-              factory: $HomeRouteExtension._fromState,
+              path: '/store',
+              factory: $StoreRouteExtension._fromState,
             ),
             GoRouteData.$route(
               path: '/doom',
@@ -122,11 +122,11 @@ extension $NavigationShellExtension on NavigationShell {
   static NavigationShell _fromState(GoRouterState state) => NavigationShell();
 }
 
-extension $HomeRouteExtension on HomeRoute {
-  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
+extension $StoreRouteExtension on StoreRoute {
+  static StoreRoute _fromState(GoRouterState state) => const StoreRoute();
 
   String get location => GoRouteData.$location(
-        '/home',
+        '/store',
       );
 
   void go(BuildContext context) => context.go(location);

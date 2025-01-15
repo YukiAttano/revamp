@@ -5,12 +5,12 @@ import "package:go_router/go_router.dart";
 import "../features/authentication/logic/provider/auth_provider.dart";
 import "main_route.dart";
 import "routes/forgot_route.dart";
-import "routes/home_route.dart";
+import "routes/store_route.dart";
 import "routes/login_route.dart";
 import "routes/register_route.dart";
 
 final _initialRoute = const LoginRoute().location;
-final initialLoggedInRoute = const HomeRoute().location;
+final initialLoggedInRoute = const StoreRoute().location;
 
 final List<String> _loggedOutRoutes = [
   const LoginRoute().location,
@@ -43,7 +43,7 @@ void goBack(BuildContext context) {
   if (router.canPop()) {
     router.pop();
   } else {
-    const HomeRoute().go(context);
+    const StoreRoute().go(context);
   }
 }
 

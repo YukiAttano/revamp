@@ -1,7 +1,7 @@
 import "../../../../shared/logic/user_storage_handler.dart";
 
-class HomeLocalRepository {
+class StoreLocalRepository {
   final UserStorageHandler storage;
 
-  HomeLocalRepository({required this.storage});
+  StoreLocalRepository({required this.storage});
 }

@@ -4,7 +4,7 @@ import "package:ux_improvements/ux_improvements.dart";
 
 import "../basic_route_data.dart";
 import "../routes/doom_route.dart";
-import "../routes/home_route.dart";
+import "../routes/store_route.dart";
 import "../routes/settings_route.dart";
 import "nav_bar_bottom.dart";
 import "nav_bar_side.dart";
@@ -20,7 +20,7 @@ class NavBar extends StatelessWidget {
   const NavBar({super.key, required this.currentRoute, required this.child, this.ignoreLandscape = false});
 
   static final List<UiRouteData> routes = [
-    const HomeRoute(),
+    const StoreRoute(),
     const DoomRoute(),
     const SettingsRoute(),
   ];

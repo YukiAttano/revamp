@@ -3,7 +3,7 @@ import "package:go_router/go_router.dart";
 
 import "routes/doom_route.dart";
 import "routes/forgot_route.dart";
-import "routes/home_route.dart";
+import "routes/store_route.dart";
 import "routes/imprint_route.dart";
 import "routes/license_route.dart";
 import "routes/login_route.dart";
@@ -22,7 +22,7 @@ part "main_route.g.dart";
     TypedGoRoute<ForgotRoute>(path: "/forgot"),
     TypedShellRoute<NavigationShell>(
       routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<HomeRoute>(path: "/home"),
+        TypedGoRoute<StoreRoute>(path: "/store"),
         TypedGoRoute<DoomRoute>(path: "/doom"),
         TypedGoRoute<ProductRoute>(path: "/product"),
         TypedGoRoute<SettingsRoute>(
