@@ -29,9 +29,12 @@ class StoreScreen extends ConsumerWidget {
         builder: (context) {
           Widget child;
 
+          return StoreView(
+            onRefresh: onRefresh,
+            // onSelected: (id) => _onGoToProduct(context, id),
+          );
           if (snap.hasData) {
             child = StoreView(
-
               onRefresh: onRefresh,
              // onSelected: (id) => _onGoToProduct(context, id),
             );

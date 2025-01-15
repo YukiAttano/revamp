@@ -19,15 +19,12 @@ final storeRepoProvider = Provider((ref) {
   );
 },);
 
-// The Provider is hold alive as long as the user is on the same layer as the HomeRoute (because this provider is used in the HomeRoute)
-// This means, if .autoDispose is used, the Provider is still alive if the user is on the SettingsRoute
-// This also means, that if no .autoDispose is used, the Provider is kept alive as long as the App is alive.
 final storeProvider = StateNotifierProvider<HomeNotifier, StoreSnapshot>(HomeNotifier.new);
 
 class HomeNotifier extends GenericStateNotifier<List<String>, StoreSnapshot> {
   final Ref _ref;
 
-  StoreRepository get _remote => _ref.read(storeRepoProvider);
+  StoreRepository get _repo => _ref.read(storeRepoProvider);
 
   HomeNotifier(this._ref) : super(const StoreSnapshot.init(loading: true, initialized: false)) {
     unawaited(_init());
