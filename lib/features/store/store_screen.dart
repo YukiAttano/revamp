@@ -6,6 +6,7 @@ import "../../shared/logic/message_queue/message_queue.dart";
 import "../../shared/ui/widgets/layout/screen_view.dart";
 import "../doom/data/doom_snapshot.dart";
 import "../doom/logic/doom_provider.dart";
+import "data/store_item.dart";
 import "data/store_snapshot.dart";
 import "logic/store_provider.dart";
 import "views/store_empty_view.dart";
@@ -30,12 +31,10 @@ class StoreScreen extends ConsumerWidget {
         builder: (context) {
           Widget child;
 
-          return _ContentView(
-            onRefresh: onRefresh,
-            // onSelected: (id) => _onGoToProduct(context, id),
-          );
+
           if (snap.hasData) {
-            child = StoreView(
+            child = _ContentView(
+              items: snap.data,
               onRefresh: onRefresh,
               // onSelected: (id) => _onGoToProduct(context, id),
             );
@@ -68,16 +67,19 @@ class StoreScreen extends ConsumerWidget {
 }
 
 class _ContentView extends StatelessWidget {
+
+  final List<StoreItem> items;
   final void Function(int id)? onSelected;
   final RefreshCallback? onRefresh;
 
-  const _ContentView({super.key, this.onRefresh, this.onSelected});
+  const _ContentView({super.key, required this.items, this.onRefresh, this.onSelected});
 
   @override
   Widget build(BuildContext context) {
     return ScreenView(
       viewPaddingAsListPadding: true,
       child: StoreView(
+        items: items,
         onRefresh: onRefresh,
         onSelected: onSelected,
       ),

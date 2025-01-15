@@ -10,8 +10,8 @@ _$StoreCategoryImpl _$$StoreCategoryImplFromJson(Map<String, dynamic> json) =>
     _$StoreCategoryImpl(
       id: json['id'] as String,
       name: json['name'] as String? ?? "",
-      width: (json['width'] as num?)?.toInt(),
-      height: (json['height'] as num?)?.toInt(),
+      width: (json['width'] as num?)?.toDouble(),
+      height: (json['height'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$StoreCategoryImplToJson(_$StoreCategoryImpl instance) =>

@@ -1,8 +1,8 @@
 
 import "../../../shared/logic/load_snapshot/list_snapshot.dart";
-import "store_entry.dart";
+import "store_item.dart";
 
-class StoreSnapshot extends ListSnapshot<StoreEntry> {
+class StoreSnapshot extends ListSnapshot<StoreItem> {
 
   final bool initialized;
 
@@ -17,7 +17,7 @@ class StoreSnapshot extends ListSnapshot<StoreEntry> {
   const StoreSnapshot.init({super.loading = false, required this.initialized}) : super.init();
 
   @override
-  StoreSnapshot copyWith({List<StoreEntry>? data, bool? initialized, bool? loading, bool? hideLoading, Object? exception}) {
+  StoreSnapshot copyWith({List<StoreItem>? data, bool? initialized, bool? loading, bool? hideLoading, Object? exception}) {
     return StoreSnapshot(
       data: data ?? this.data,
       initialized: initialized ?? this.initialized,
@@ -28,7 +28,7 @@ class StoreSnapshot extends ListSnapshot<StoreEntry> {
   }
 
   @override
-  StoreSnapshot withoutException({List<StoreEntry>? data, bool? initialized, bool? loading, bool? hideLoading}) {
+  StoreSnapshot withoutException({List<StoreItem>? data, bool? initialized, bool? loading, bool? hideLoading}) {
     return StoreSnapshot(
       data: data ?? this.data,
       initialized: initialized ?? this.initialized,

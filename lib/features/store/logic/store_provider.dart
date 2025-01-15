@@ -7,7 +7,7 @@ import "../../../shared/data/money.dart";
 import "../../../shared/logic/network/network_client.dart";
 import "../../../shared/logic/user_storage_handler.dart";
 import "../data/store_category.dart";
-import "../data/store_entry.dart";
+import "../data/store_item.dart";
 import "../data/store_product.dart";
 import "../data/store_snapshot.dart";
 import "repository/store_local_repository.dart";
@@ -25,7 +25,7 @@ final storeRepoProvider = Provider((ref) {
 
 final storeProvider = StateNotifierProvider<HomeNotifier, StoreSnapshot>(HomeNotifier.new);
 
-class HomeNotifier extends GenericStateNotifier<List<StoreEntry>, StoreSnapshot> {
+class HomeNotifier extends GenericStateNotifier<List<StoreItem>, StoreSnapshot> {
   final Ref _ref;
 
   StoreRepository get _repo => _ref.read(storeRepoProvider);
@@ -63,8 +63,8 @@ class HomeNotifier extends GenericStateNotifier<List<StoreEntry>, StoreSnapshot>
 }
 
 
-List<StoreEntry> _dummy = [
-  StoreEntry(
+List<StoreItem> _dummy = [
+  StoreItem(
     category: StoreCategory(id: "0", name: "recently viewed"),
     products: [
       StoreProduct(
@@ -79,7 +79,7 @@ List<StoreEntry> _dummy = [
       ),
     ],
   ),
-  StoreEntry(
+  StoreItem(
     category: StoreCategory(id: "1", name: "most viewed"),
     products: [
       StoreProduct(

@@ -8,8 +8,8 @@ class StoreCategory with _$StoreCategory {
   const factory StoreCategory({
     required String id,
     @Default("") String name,
-    int? width,
-    int? height,
+    double? width,
+    double? height,
   }) = _StoreCategory;
 
   factory StoreCategory.fromJson(Map<String, dynamic> json) => _$StoreCategoryFromJson(json);

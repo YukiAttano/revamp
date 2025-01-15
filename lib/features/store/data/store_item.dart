@@ -5,19 +5,19 @@ import "../../../shared/data/money.dart";
 import "store_category.dart";
 import "store_product.dart";
 
-part "store_entry.g.dart";
+part "store_item.g.dart";
 
 @JsonSerializable()
-class StoreEntry {
+class StoreItem {
   final StoreCategory category;
   final List<StoreProduct> products;
 
-  const StoreEntry({
+  const StoreItem({
     required this.category,
     this.products = const [],
   });
 
-  factory StoreEntry.fromJson(Map<String, dynamic> json) => _$StoreEntryFromJson(json);
+  factory StoreItem.fromJson(Map<String, dynamic> json) => _$StoreItemFromJson(json);
 
-  Map<String, dynamic> toJson() => _$StoreEntryToJson(this);
+  Map<String, dynamic> toJson() => _$StoreItemToJson(this);
 }
