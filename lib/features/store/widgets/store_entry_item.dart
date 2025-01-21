@@ -13,6 +13,7 @@ class StoreEntry extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         StoreListingTitle(category: entry.category),
         StoreProductList(products: entry.products),

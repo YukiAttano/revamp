@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 
 import "../../../shared/data/product.dart";
 import "../../../shared/ui/widgets/basic/money_text.dart";
+import "../../../shared/ui/widgets/product_tag.dart";
 
 class ProductListing extends StatelessWidget {
   static const double _fallbackWidth = 90;
@@ -33,18 +34,45 @@ class ProductListing extends StatelessWidget {
               child: ColoredBox(color: Colors.grey),
             ),
           ),
-          Text(
-            product.title,
-            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                product.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: textTheme.labelSmall?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              Visibility(
+                visible: product.condition.trim().isNotEmpty,
+                child: ProductTag(
+                  child: Text(
+                    product.condition,
+                  ),
+                ),
+              ),
+            ],
           ),
           Text(
             product.type,
             maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: textTheme.bodySmall,
           ),
-          MoneyText(
-            money: product.costs,
-            style: textTheme.labelSmall,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              MoneyText(
+                money: product.costs,
+                style: textTheme.labelSmall,
+              ),
+              Visibility(
+                visible: product.size.trim().isNotEmpty,
+                child: ProductTag(
+                  child: Text(product.size),
+                ),
+              ),
+            ],
           ),
         ],
       ),

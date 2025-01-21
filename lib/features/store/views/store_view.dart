@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:ux_improvements/ux_improvements.dart";
 
+import "../../../shared/ui/widgets/gap.dart";
 import "../../../shared/ui/widgets/inherited_list_padding.dart";
 import "../../../shared/ui/widgets/text_field/searchbar.dart";
 import "../data/store_item.dart";
@@ -27,11 +28,12 @@ class StoreView extends StatelessWidget {
           ),
         ),
 
-        SliverList.builder(
+        SliverList.separated(
           itemCount: items.length,
           itemBuilder: (context, index) {
             return StoreEntry(entry: items[index]);
           },
+          separatorBuilder: (_, __) => const Gap(),
         )
       ],
     );
