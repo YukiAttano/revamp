@@ -1,12 +1,13 @@
 import "package:flutter/material.dart";
 
-import "../../data/product.dart";
+import "../../../../shared/data/product.dart";
 import "doom_product_bottomline.dart";
 import "doom_product_headline.dart";
 import "product_image_slider.dart";
 
+
 class DoomPage extends StatelessWidget {
-  final Product product;
+  final DoomProduct product;
 
   const DoomPage({super.key, required this.product});
 

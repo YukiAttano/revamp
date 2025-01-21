@@ -1,10 +1,11 @@
 import "package:flutter/material.dart";
 
-import "../data/store_product.dart";
+import "../../../shared/data/product.dart";
+import "../../../shared/logic/list/separated_list.dart";
+import "../../../shared/ui/widgets/gap.dart";
 import "product_listing.dart";
 
 class StoreProductList extends StatelessWidget {
-
   final List<StoreProduct> products;
   final double? categoryWidth;
   final double? categoryHeight;
@@ -14,10 +15,12 @@ class StoreProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
       child: Row(
-        children: List.generate(
+        mainAxisSize: MainAxisSize.min,
+        children: separatedList(
           products.length,
-              (index) {
+          itemBuilder: (index) {
             StoreProduct p = products[index];
 
             return ProductListing(
@@ -26,6 +29,7 @@ class StoreProductList extends StatelessWidget {
               categoryHeight: categoryHeight,
             );
           },
+          separatorBuilder: (index) => const Gap.small(),
         ),
       ),
     );

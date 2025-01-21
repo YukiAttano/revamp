@@ -4,11 +4,11 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 
 import "../../../../shared/logic/generic_state_notifier.dart";
 import "../../../shared/data/money.dart";
+import "../../../shared/data/product.dart";
 import "../../../shared/logic/network/network_client.dart";
 import "../../../shared/logic/user_storage_handler.dart";
 import "../data/store_category.dart";
 import "../data/store_item.dart";
-import "../data/store_product.dart";
 import "../data/store_snapshot.dart";
 import "repository/store_local_repository.dart";
 import "repository/store_remote_repository.dart";
@@ -70,11 +70,13 @@ List<StoreItem> _dummy = [
       StoreProduct(
         id: 0,
         title: "Zero",
+        type: "Bamboo Shoes",
         costs: Money(amount: 20, currency: "EUR"),
       ),
       StoreProduct(
         id: 1,
         title: "One",
+        type: "Rollkragenpullover",
         costs: Money(amount: 40, currency: "EUR"),
       ),
     ],
@@ -84,17 +86,49 @@ List<StoreItem> _dummy = [
     products: [
       StoreProduct(
         id: 2,
+        type: "Rollkragenpullover",
         title: "Two",
         costs: Money(amount: 20, currency: "EUR"),
       ),
       StoreProduct(
         id: 3,
         title: "Three",
+        type: "T-Shirt",
         costs: Money(amount: 40, currency: "EUR"),
       ),
       StoreProduct(
         id: 4,
         title: "Four",
+        type: "T-Shirt",
+        costs: Money(amount: 40, currency: "EUR"),
+      ),
+    ],
+  ),
+  StoreItem(
+    category: StoreCategory(id: "1", name: "most liked"),
+    products: [
+      StoreProduct(
+        id: 5,
+        type: "Vintage Trackpant",
+        title: "Five",
+        costs: Money(amount: 20, currency: "EUR"),
+      ),
+      StoreProduct(
+        id: 6,
+        title: "Six",
+        type: "T-Shirt",
+        costs: Money(amount: 60, currency: "EUR"),
+      ),
+      StoreProduct(
+        id: 7,
+        title: "Seven",
+        type: "Trainingsjacke",
+        costs: Money(amount: 100, currency: "EUR"),
+      ),
+      StoreProduct(
+        id: 8,
+        title: "Eight",
+        type: "Trainingsjacke",
         costs: Money(amount: 40, currency: "EUR"),
       ),
     ],

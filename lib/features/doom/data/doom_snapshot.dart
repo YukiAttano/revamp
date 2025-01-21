@@ -1,7 +1,7 @@
+import "../../../shared/data/product.dart";
 import "../../../shared/logic/load_snapshot/list_snapshot.dart";
-import "product.dart";
 
-class DoomSnapshot extends ListSnapshot<Product> {
+class DoomSnapshot extends ListSnapshot<DoomProduct> {
 
   final bool initialized;
 
@@ -16,7 +16,7 @@ class DoomSnapshot extends ListSnapshot<Product> {
   const DoomSnapshot.init({this.initialized = false, super.loading = false}) : super.init();
 
   @override
-  DoomSnapshot copyWith({List<Product>? data, bool? initialized, bool? loading, bool? hideLoading, Object? exception}) {
+  DoomSnapshot copyWith({List<DoomProduct>? data, bool? initialized, bool? loading, bool? hideLoading, Object? exception}) {
     return DoomSnapshot(
       data: data ?? this.data,
       initialized: initialized ?? this.initialized,
@@ -27,7 +27,7 @@ class DoomSnapshot extends ListSnapshot<Product> {
   }
 
   @override
-  DoomSnapshot withoutException({List<Product>? data, bool? initialized, bool? loading, bool? hideLoading}) {
+  DoomSnapshot withoutException({List<DoomProduct>? data, bool? initialized, bool? loading, bool? hideLoading}) {
     return DoomSnapshot(
       data: data ?? this.data,
       initialized: initialized ?? this.initialized,

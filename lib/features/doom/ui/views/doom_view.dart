@@ -2,14 +2,14 @@ import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:ux_improvements/ux_improvements.dart";
 
+import "../../../../shared/data/product.dart";
 import "../../../../shared/ui/widgets/layout/screen_view.dart";
 import "../../../../shared/ui/widgets/views/adaptive_refresh_page_view.dart";
-import "../../data/product.dart";
 import "../widgets/doom_page.dart";
 import "../widgets/doom_product_headline.dart";
 
 class DoomView extends StatefulWidget {
-  final List<Product> products;
+  final List<DoomProduct> products;
   final RefreshCallback? onRefresh;
   final void Function(int id)? onSelected;
 
@@ -33,7 +33,7 @@ class _DoomViewState extends State<DoomView> {
 
   int _selectedIndex = 0;
 
-  Product get _selected => widget.products[_selectedIndex];
+  DoomProduct get _selected => widget.products[_selectedIndex];
 
   @override
   void initState() {
@@ -72,7 +72,7 @@ class _DoomViewState extends State<DoomView> {
 
   @override
   Widget build(BuildContext context) {
-    Product selected = _selected;
+    DoomProduct selected = _selected;
 
     return ScreenView(
       showAppBar: false,

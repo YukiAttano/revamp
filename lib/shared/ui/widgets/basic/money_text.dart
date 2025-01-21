@@ -20,7 +20,7 @@ class MoneyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String text = "$leading${money.value.toStringAsFixed(2)}";
-    if (showCurrency) text += " ${money.currency}";
+    if (showCurrency) text = "$leading$money";
 
     return Text(
       text,

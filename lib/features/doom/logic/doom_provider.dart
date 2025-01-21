@@ -5,9 +5,9 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 
 import "../../../environment.dart";
 import "../../../shared/data/money.dart";
+import "../../../shared/data/product.dart";
 import "../../../shared/logic/generic_state_notifier.dart";
 import "../data/doom_snapshot.dart";
-import "../data/product.dart";
 
 final doomProvider = StateNotifierProvider<DoomNotifier, DoomSnapshot>(
   (ref) {
@@ -15,7 +15,7 @@ final doomProvider = StateNotifierProvider<DoomNotifier, DoomSnapshot>(
   },
 );
 
-class DoomNotifier extends GenericStateNotifier<List<Product>, DoomSnapshot> {
+class DoomNotifier extends GenericStateNotifier<List<DoomProduct>, DoomSnapshot> {
   DoomNotifier() : super(const DoomSnapshot.init(loading: true)) {
     unawaited(_init());
   }
@@ -39,27 +39,30 @@ class DoomNotifier extends GenericStateNotifier<List<Product>, DoomSnapshot> {
 class _Data {
   Random r = Random();
 
-  List<Product> list(int amount) {
+  List<DoomProduct> list(int amount) {
 
     return [levisShoe, randomJacket];
 
+    /*
     return List.generate(
       amount,
       (index) {
-        return Product.dummy.copyWith(
+        return DoomProduct.dummy.copyWith(
+
             id: index,
             title: "Product $index",
             costs: Money(amount: r.nextInt(100).toDouble(), currency: "Eur"),
             likes: r.nextInt(200) * 100);
       },
-    );
+    );*/
   }
 
-  Product levisShoe = Product(
+  DoomProduct levisShoe = DoomProduct(
     id: 0,
     title: "Levi's Courtright Sneaker",
     description: "Your best Friend",
     likes: 50,
+    size: "45",
     costs: Money(amount: 2000, currency: "EUR"),
     condition: "Like New",
     properties: "Medium, Men, Brown",
@@ -70,11 +73,12 @@ class _Data {
     ],
   );
 
-  Product randomJacket = Product(
+  DoomProduct randomJacket = DoomProduct(
     id: 1,
     title: "Winddichte Jacke",
     description: "Winddichte Winterjacke aus Fleece",
     likes: 20,
+    size: "L",
     costs: Money(amount: 4500, currency: "EUR"),
     condition: "Worn",
     properties: "Large, Men, Black",

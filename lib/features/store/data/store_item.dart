@@ -1,9 +1,7 @@
-import "package:flutter/material.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 
-import "../../../shared/data/money.dart";
+import "../../../shared/data/product.dart";
 import "store_category.dart";
-import "store_product.dart";
 
 part "store_item.g.dart";
 
