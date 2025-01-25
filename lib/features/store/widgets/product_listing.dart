@@ -5,8 +5,8 @@ import "../../../shared/ui/widgets/basic/money_text.dart";
 import "../../../shared/ui/widgets/product_tag.dart";
 
 class ProductListing extends StatelessWidget {
-  static const double _fallbackWidth = 90;
-  static const double _fallbackHeight = 90;
+  static const double _fallbackWidth = 110;
+  static const double _fallbackHeight = 110;
 
   final StoreProduct product;
   final double categoryWidth;
