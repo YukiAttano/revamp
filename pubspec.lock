@@ -837,7 +837,7 @@ packages:
       path: "../package-ux_improvements"
       relative: true
     source: path
-    version: "0.11.7"
+    version: "0.11.8"
   vector_math:
     dependency: transitive
     description:

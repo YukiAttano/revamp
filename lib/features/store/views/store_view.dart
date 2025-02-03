@@ -5,6 +5,8 @@ import "../../../shared/ui/widgets/gap.dart";
 import "../../../shared/ui/widgets/inherited_list_padding.dart";
 import "../../../shared/ui/widgets/text_field/searchbar.dart";
 import "../data/store_item.dart";
+import "../data/store_listing/banner_listing.dart";
+import "../widgets/banner_box.dart";
 import "../widgets/store_entry_item.dart";
 
 class StoreView extends StatelessWidget {
@@ -23,11 +25,14 @@ class StoreView extends StatelessWidget {
           child: Searchbar(),
         ),
         SliverToBoxAdapter(
-          child: Placeholder(
-            fallbackHeight: 140,
+          child: BannerBox(
+            banner: BannerListing(
+              title: "Title",
+              description: "Super Long Description on Banner",
+              action: "Action",
+            ),
           ),
         ),
-
         SliverList.separated(
           itemCount: items.length,
           itemBuilder: (context, index) {

@@ -1,18 +1,18 @@
 import "package:flutter/material.dart";
 
-import "../../../shared/data/product.dart";
 import "../../../shared/ui/widgets/basic/money_text.dart";
 import "../../../shared/ui/widgets/product_tag.dart";
+import "../data/store_listing/product_listing.dart";
 
-class ProductListing extends StatelessWidget {
+class ProductBox extends StatelessWidget {
   static const double _fallbackWidth = 110;
   static const double _fallbackHeight = 110;
 
-  final StoreProduct product;
+  final ProductListing product;
   final double categoryWidth;
   final double categoryHeight;
 
-  const ProductListing({super.key, required this.product, double? categoryWidth, double? categoryHeight})
+  const ProductBox({super.key, required this.product, double? categoryWidth, double? categoryHeight})
       : categoryWidth = categoryWidth ?? _fallbackWidth,
         categoryHeight = categoryHeight ?? _fallbackHeight;
 
@@ -54,7 +54,7 @@ class ProductListing extends StatelessWidget {
             ],
           ),
           Text(
-            product.type,
+            product.term,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: textTheme.bodySmall,

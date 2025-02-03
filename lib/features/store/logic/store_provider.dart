@@ -9,6 +9,7 @@ import "../../../shared/logic/network/network_client.dart";
 import "../../../shared/logic/user_storage_handler.dart";
 import "../data/store_category.dart";
 import "../data/store_item.dart";
+import "../data/store_listing/product_listing.dart";
 import "../data/store_snapshot.dart";
 import "repository/store_local_repository.dart";
 import "repository/store_remote_repository.dart";
@@ -67,18 +68,18 @@ class _Data {
     StoreItem(
       category: StoreCategory(id: "0", name: "recently viewed"),
       products: [
-        StoreProduct(
+        ProductListing(
           id: 0,
           title: "Zero",
-          type: "Bamboo Shoes",
+          term: "Bamboo Shoes",
           size: "38",
           condition: "Worn",
           costs: Money(amount: 20, currency: "EUR"),
         ),
-        StoreProduct(
+        ProductListing(
           id: 1,
           title: "One",
-          type: "Rollkragenpullover",
+          term: "Rollkragenpullover",
           size: "L",
           condition: "Like New",
           costs: Money(amount: 40, currency: "EUR"),
@@ -88,25 +89,25 @@ class _Data {
     StoreItem(
       category: StoreCategory(id: "1", name: "most viewed"),
       products: [
-        StoreProduct(
+        ProductListing(
           id: 2,
-          type: "Rollkragenpullover",
+          term: "Rollkragenpullover",
           title: "Two",
           costs: Money(amount: 20, currency: "EUR"),
         ),
-        StoreProduct(
+        ProductListing(
           id: 3,
           title: "Three",
-          type: "T-Shirt",
+          term: "T-Shirt",
           height: 150,
           width: 150,
           condition: "Like New",
           costs: Money(amount: 40, currency: "EUR"),
         ),
-        StoreProduct(
+        ProductListing(
           id: 4,
           title: "Four",
-          type: "T-Shirt",
+          term: "T-Shirt",
           size: "S",
           costs: Money(amount: 40, currency: "EUR"),
         ),
@@ -115,33 +116,33 @@ class _Data {
     StoreItem(
       category: StoreCategory(id: "1", name: "most liked"),
       products: [
-        StoreProduct(
+        ProductListing(
           id: 5,
-          type: "Vintage Trackpant",
+          term: "Vintage Trackpant",
           title: "Five",
           condition: "Rotten",
           size: "L",
           costs: Money(amount: 20, currency: "EUR"),
         ),
-        StoreProduct(
+        ProductListing(
           id: 6,
           title: "Six",
-          type: "T-Shirt",
+          term: "T-Shirt",
           size: "XL",
           condition: "Good",
           costs: Money(amount: 60, currency: "EUR"),
         ),
-        StoreProduct(
+        ProductListing(
           id: 7,
           title: "Seven",
-          type: "Trainingsjacke",
+          term: "Trainingsjacke",
           condition: "Good",
           costs: Money(amount: 100, currency: "EUR"),
         ),
-        StoreProduct(
+        ProductListing(
           id: 8,
           title: "Eight",
-          type: "Trainingsjacke",
+          term: "Trainingsjacke",
           costs: Money(amount: 40, currency: "EUR"),
         ),
       ],

@@ -67,29 +67,3 @@ class DoomProduct extends Product {
     ],
   );
 }
-
-@JsonSerializable()
-class StoreProduct extends Product {
-  final String type;
-  final String imageUrl;
-  final double? width;
-  final double? height;
-
-  const StoreProduct({
-    required super.id,
-    super.title,
-    super.size,
-    super.likes,
-    required super.costs,
-    super.condition,
-    super.properties,
-    this.type = "",
-    this.imageUrl = "",
-    this.width,
-    this.height,
-  });
-
-  factory StoreProduct.fromJson(Map<String, dynamic> json) => _$StoreProductFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StoreProductToJson(this);
-}

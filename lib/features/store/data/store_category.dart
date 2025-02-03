@@ -10,6 +10,7 @@ class StoreCategory with _$StoreCategory {
     @Default("") String name,
     double? width,
     double? height,
+    @Default(true) bool visible,
   }) = _StoreCategory;
 
   factory StoreCategory.fromJson(Map<String, dynamic> json) => _$StoreCategoryFromJson(json);
