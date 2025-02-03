@@ -66,6 +66,19 @@ class TagStyle extends ThemeExtension<TagStyle> {
     );
   }
 
+   factory TagStyle.lowEmphasis(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    ColorScheme scheme = theme.colorScheme;
+
+    return TagStyle(
+      padding: const EdgeInsets.symmetric(horizontal: 6),
+      textStyle: Theme.of(context).textTheme.labelSmall,
+      color: Colors.grey,
+    );
+  }
+
+
+
   factory TagStyle.rect() {
     const EdgeInsets padding = EdgeInsets.all(6);
     ShapeBorder? shape = const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8)));

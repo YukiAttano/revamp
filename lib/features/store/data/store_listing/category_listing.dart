@@ -11,10 +11,14 @@ class CategoryListing implements StoreListing {
 
   final String title;
   final String imageUrl;
+  final double? height;
+  final double? width;
 
   const CategoryListing({
     this.title = "",
     this.imageUrl = "",
+    this.height,
+    this.width,
   });
 
   factory CategoryListing.fromJson(Map<String, dynamic> json) => _$CategoryListingFromJson(json);

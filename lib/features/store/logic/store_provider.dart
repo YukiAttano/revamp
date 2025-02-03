@@ -9,6 +9,7 @@ import "../../../shared/logic/network/network_client.dart";
 import "../../../shared/logic/user_storage_handler.dart";
 import "../data/store_category.dart";
 import "../data/store_item.dart";
+import "../data/store_listing/category_listing.dart";
 import "../data/store_listing/product_listing.dart";
 import "../data/store_listing/store_listing.dart";
 import "../data/store_snapshot.dart";
@@ -68,7 +69,7 @@ class _Data {
   List<StoreItem> l = [
     StoreItem(
       category: StoreCategory(id: "0", name: "recently viewed"),
-      products: [
+      listings: <ProductListing>[
         ProductListing(
           id: 0,
           title: "Zero",
@@ -89,7 +90,7 @@ class _Data {
     ),
     StoreItem(
       category: StoreCategory(id: "1", name: "most viewed"),
-      products: [
+      listings: <ProductListing>[
         ProductListing(
           id: 2,
           term: "Rollkragenpullover",
@@ -116,7 +117,7 @@ class _Data {
     ),
     StoreItem(
       category: StoreCategory(id: "1", name: "most liked"),
-      products: [
+      listings: <ProductListing>[
         ProductListing(
           id: 5,
           term: "Vintage Trackpant",
@@ -145,6 +146,19 @@ class _Data {
           title: "Eight",
           term: "Trainingsjacke",
           costs: Money(amount: 40, currency: "EUR"),
+        ),
+      ],
+    ),
+    StoreItem(
+      category: StoreCategory(id: "2", name: "categories"),
+      listings: <CategoryListing>[
+        CategoryListing(
+          title: "Zero",
+          imageUrl: "",
+        ),
+        CategoryListing(
+          title: "One",
+          imageUrl: "",
         ),
       ],
     ),

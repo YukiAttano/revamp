@@ -9,13 +9,13 @@ part of 'store_item.dart';
 StoreItem _$StoreItemFromJson(Map<String, dynamic> json) => StoreItem(
       category:
           StoreCategory.fromJson(json['category'] as Map<String, dynamic>),
-      products: (json['products'] as List<dynamic>?)
-              ?.map((e) => ProductListing.fromJson(e as Map<String, dynamic>))
+      listings: (json['listings'] as List<dynamic>?)
+              ?.map((e) => StoreListing.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );
 
 Map<String, dynamic> _$StoreItemToJson(StoreItem instance) => <String, dynamic>{
       'category': instance.category,
-      'products': instance.products,
+      'listings': instance.listings,
     };

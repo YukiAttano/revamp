@@ -50,4 +50,6 @@ abstract class StoreListing {
         return CategoryListing.fromJson(json);
     }
   }
+
+  Map<String, Object?> toJson();
 }

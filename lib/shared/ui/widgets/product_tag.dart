@@ -11,11 +11,7 @@ class ProductTag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tag(
-      style: TagStyle(
-        padding: const EdgeInsets.symmetric(horizontal: 6),
-        textStyle: Theme.of(context).textTheme.labelSmall,
-        color: Colors.grey,
-      ),
+      style: TagStyle.lowEmphasis(context),
       child: child,
     );
   }

@@ -32,7 +32,7 @@ class ProductBox extends StatelessWidget {
             width: product.width ?? categoryWidth,
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(4)),
-              child: ColoredBox(color: Colors.grey),
+              child: ColoredBox(color: Colors.grey.shade300),
             ),
           ),
           Row(
