@@ -9,6 +9,7 @@ import "../../../shared/logic/network/network_client.dart";
 import "../../../shared/logic/user_storage_handler.dart";
 import "../data/store_category.dart";
 import "../data/store_item.dart";
+import "../data/store_listing/brand_listing.dart";
 import "../data/store_listing/category_listing.dart";
 import "../data/store_listing/product_listing.dart";
 import "../data/store_listing/store_listing.dart";
@@ -112,6 +113,19 @@ class _Data {
           term: "T-Shirt",
           size: "S",
           costs: Money(amount: 40, currency: "EUR"),
+        ),
+      ],
+    ),
+    StoreItem(
+      category: StoreCategory(id: "4", name: "Brands"),
+      listings: <BrandListing>[
+        BrandListing(
+          title: "Adidas",
+          imageUrl: "",
+        ),
+        BrandListing(
+          title: "Rebook",
+          imageUrl: "",
         ),
       ],
     ),

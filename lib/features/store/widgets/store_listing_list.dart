@@ -5,6 +5,7 @@ import "../data/store_listing/brand_listing.dart";
 import "../data/store_listing/category_listing.dart";
 import "../data/store_listing/product_listing.dart";
 import "../data/store_listing/store_listing.dart";
+import "listing_lists/store_brand_list.dart";
 import "listing_lists/store_category_list.dart";
 import "listing_lists/store_product_list.dart";
 
@@ -38,8 +39,14 @@ class StoreListingList extends StatelessWidget {
           categoryHeight: categoryHeight,
           categoryWidth: categoryWidth,
         );
-      case List<BannerListing>():
+
       case List<BrandListing>():
+        return StoreBrandList(
+          brands: l,
+          categoryHeight: categoryHeight,
+          categoryWidth: categoryWidth,
+        );
+      case List<BannerListing>():
         return Placeholder(fallbackHeight: 120);
     }
 

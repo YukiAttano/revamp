@@ -11,10 +11,14 @@ class BrandListing implements StoreListing {
 
   final String title;
   final String imageUrl;
+  final double? height;
+  final double? width;
 
   const BrandListing({
     this.title = "",
     this.imageUrl = "",
+    this.height,
+    this.width,
   });
 
   factory BrandListing.fromJson(Map<String, dynamic> json) => _$BrandListingFromJson(json);
