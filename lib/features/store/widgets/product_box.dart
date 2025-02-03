@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import "../../../shared/ui/widgets/basic/money_text.dart";
 import "../../../shared/ui/widgets/product_tag.dart";
 import "../data/store_listing/product_listing.dart";
+import "../data/store_listing/store_listing.dart";
 
 class ProductBox extends StatelessWidget {
   static const double _fallbackWidth = 110;

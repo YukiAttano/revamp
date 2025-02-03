@@ -10,6 +10,7 @@ import "../../../shared/logic/user_storage_handler.dart";
 import "../data/store_category.dart";
 import "../data/store_item.dart";
 import "../data/store_listing/product_listing.dart";
+import "../data/store_listing/store_listing.dart";
 import "../data/store_snapshot.dart";
 import "repository/store_local_repository.dart";
 import "repository/store_remote_repository.dart";

@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 
 import "../../../shared/ui/widgets/button/app_button.dart";
 import "../data/store_listing/banner_listing.dart";
+import "../data/store_listing/store_listing.dart";
 
 class BannerBox extends StatelessWidget {
   static const double _fallbackHeight = 160;

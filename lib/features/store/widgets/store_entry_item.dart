@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 
 import "../data/store_item.dart";
+import "store_listing_list.dart";
 import "store_listing_title.dart";
 import "store_product_list.dart";
 
@@ -16,7 +17,7 @@ class StoreEntry extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         StoreListingTitle(category: entry.category),
-        StoreProductList(products: entry.products),
+        StoreListingList(listings: entry.products),
       ],
     );
   }

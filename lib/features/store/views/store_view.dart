@@ -6,6 +6,7 @@ import "../../../shared/ui/widgets/inherited_list_padding.dart";
 import "../../../shared/ui/widgets/text_field/searchbar.dart";
 import "../data/store_item.dart";
 import "../data/store_listing/banner_listing.dart";
+import "../data/store_listing/store_listing.dart";
 import "../widgets/banner_box.dart";
 import "../widgets/store_entry_item.dart";
 

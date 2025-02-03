@@ -13,16 +13,19 @@ class StoreListingTitle extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     TextTheme textTheme = theme.textTheme;
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          category.name,
-          style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-          maxLines: 1,
-        ),
-        IconButton(onPressed: null, icon: Icon(Icons.arrow_right)),
-      ],
+    return Visibility(
+      visible: category.visible,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            category.name,
+            style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+            maxLines: 1,
+          ),
+          IconButton(onPressed: null, icon: Icon(Icons.arrow_right)),
+        ],
+      ),
     );
   }
 }
