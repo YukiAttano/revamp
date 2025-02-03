@@ -35,6 +35,7 @@ class BrandBox extends StatelessWidget {
             Positioned.fill(
               child: ColoredBox(color: Colors.grey.shade300),
             ),
+            // TODO(Alex): Fix tag exceeding max width
             Positioned(
               left: 4,
               bottom: 4,

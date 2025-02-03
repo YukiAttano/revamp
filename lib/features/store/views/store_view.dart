@@ -25,15 +25,6 @@ class StoreView extends StatelessWidget {
         SliverToBoxAdapter(
           child: Searchbar(),
         ),
-        SliverToBoxAdapter(
-          child: BannerBox(
-            banner: BannerListing(
-              title: "Title",
-              description: "Super Long Description on Banner",
-              action: "Action",
-            ),
-          ),
-        ),
         SliverList.separated(
           itemCount: items.length,
           itemBuilder: (context, index) {

@@ -2,19 +2,17 @@ import "package:flutter/material.dart";
 
 import "../../../shared/ui/widgets/button/app_button.dart";
 import "../data/store_listing/banner_listing.dart";
-import "../data/store_listing/store_listing.dart";
 
 class BannerBox extends StatelessWidget {
-  static const double _fallbackHeight = 160;
+  static const double fallbackHeight = 160;
 
   final BannerListing banner;
   final double height;
 
-  const BannerBox({super.key, required this.banner, double? height}) : height = height ?? _fallbackHeight;
+  const BannerBox({super.key, required this.banner, double? height}) : height = height ?? fallbackHeight;
 
   @override
   Widget build(BuildContext context) {
-
     ThemeData theme = Theme.of(context);
     TextTheme textTheme = theme.textTheme;
 

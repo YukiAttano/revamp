@@ -5,6 +5,7 @@ import "../data/store_listing/brand_listing.dart";
 import "../data/store_listing/category_listing.dart";
 import "../data/store_listing/product_listing.dart";
 import "../data/store_listing/store_listing.dart";
+import "listing_lists/store_banner_list.dart";
 import "listing_lists/store_brand_list.dart";
 import "listing_lists/store_category_list.dart";
 import "listing_lists/store_product_list.dart";
@@ -25,6 +26,7 @@ class StoreListingList extends StatelessWidget {
   Widget build(BuildContext context) {
     var l = listings;
 
+    // TODO(Alex): check if switch case detects subtype of list properly if .fromJson is used to generate lists
     switch (l) {
       case List<ProductListing>():
         return StoreProductList(
@@ -47,7 +49,10 @@ class StoreListingList extends StatelessWidget {
           categoryWidth: categoryWidth,
         );
       case List<BannerListing>():
-        return Placeholder(fallbackHeight: 120);
+        return StoreBannerList(
+          banner: l,
+          categoryHeight: categoryHeight,
+        );
     }
 
     return const SizedBox.shrink();

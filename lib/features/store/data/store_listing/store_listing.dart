@@ -1,5 +1,3 @@
-import "../../../../shared/logic/exceptions/parse_exception.dart";
-import "../store_category.dart";
 import "banner_listing.dart";
 import "brand_listing.dart";
 import "category_listing.dart";

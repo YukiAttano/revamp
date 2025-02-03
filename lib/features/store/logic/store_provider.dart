@@ -9,6 +9,7 @@ import "../../../shared/logic/network/network_client.dart";
 import "../../../shared/logic/user_storage_handler.dart";
 import "../data/store_category.dart";
 import "../data/store_item.dart";
+import "../data/store_listing/banner_listing.dart";
 import "../data/store_listing/brand_listing.dart";
 import "../data/store_listing/category_listing.dart";
 import "../data/store_listing/product_listing.dart";
@@ -69,6 +70,16 @@ class HomeNotifier extends GenericStateNotifier<List<StoreItem>, StoreSnapshot> 
 class _Data {
   List<StoreItem> l = [
     StoreItem(
+      category: StoreCategory(id: "5", name: "Banner", visible: false),
+      listings: <BannerListing>[
+        BannerListing(
+          title: "Freunde Bonus",
+          description: "Werbe Freunde und erhalte sofort 5 Socken",
+          action: "Einladen",
+        ),
+      ],
+    ),
+    StoreItem(
       category: StoreCategory(id: "0", name: "recently viewed"),
       listings: <ProductListing>[
         ProductListing(
@@ -126,6 +137,26 @@ class _Data {
         BrandListing(
           title: "Rebook",
           imageUrl: "",
+        ),
+      ],
+    ),
+    StoreItem(
+      category: StoreCategory(id: "5", name: "Banner", visible: false),
+      listings: <BannerListing>[
+        BannerListing(
+          title: "Spenden",
+          description: "Jetzt alte Kleider spenden",
+          action: "Spenden",
+        ),
+        BannerListing(
+          title: "Summer Sale",
+          description: "Jetzt mehr Geld ausgeben",
+          action: "Explore",
+        ),
+        BannerListing(
+          title: "Winter Sale",
+          description: "Jetzt noch mehr Geld ausgeben",
+          action: "KAUFEN",
         ),
       ],
     ),
