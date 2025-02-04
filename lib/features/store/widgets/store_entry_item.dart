@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 
+import "../../../shared/ui/widgets/gap.dart";
 import "../data/store_item.dart";
 import "store_listing_list.dart";
 import "store_listing_title.dart";
@@ -18,6 +19,7 @@ class StoreEntry extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         StoreListingTitle(category: category),
+        const Gap.small(),
         StoreListingList(
           listings: entry.listings,
           categoryWidth: category.width,
