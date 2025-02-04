@@ -27,7 +27,7 @@ class StoreProductList extends StatelessWidget {
           categoryHeight: categoryHeight,
         );
       },
-      separatorBuilder: (index) => const Gap.small(),
+      separatorBuilder: (_) => const Gap.small(),
     );
   }
 }

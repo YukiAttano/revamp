@@ -25,11 +25,13 @@ class BrandBox extends StatelessWidget {
     ColorScheme scheme = theme.colorScheme;
     TextTheme textTheme = theme.textTheme;
 
+    const BorderRadius radius = BorderRadius.all(Radius.circular(8));
+
     return SizedBox(
       height: brands.height ?? categoryHeight,
       width: brands.width ?? categoryWidth,
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderRadius: radius,
         child: Stack(
           children: [
             Positioned.fill(

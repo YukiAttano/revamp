@@ -22,6 +22,12 @@ class ProductBox extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     TextTheme textTheme = theme.textTheme;
 
+    const BorderRadius radius = BorderRadius.all(Radius.circular(4));
+
+    TextStyle? titleStyle = textTheme.labelSmall?.copyWith(fontWeight: FontWeight.bold);
+    TextStyle? termStyle = textTheme.bodySmall;
+    TextStyle? costStyle = textTheme.labelSmall;
+
     return SizedBox(
       width: product.width ?? categoryWidth,
       child: Column(
@@ -31,7 +37,7 @@ class ProductBox extends StatelessWidget {
             height: product.height ?? categoryHeight,
             width: product.width ?? categoryWidth,
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(4)),
+              borderRadius: radius,
               child: ColoredBox(color: Colors.grey.shade300),
             ),
           ),
@@ -42,14 +48,12 @@ class ProductBox extends StatelessWidget {
                 product.title,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: textTheme.labelSmall?.copyWith(fontWeight: FontWeight.bold),
+                style: titleStyle,
               ),
               Visibility(
                 visible: product.condition.trim().isNotEmpty,
                 child: ProductTag(
-                  child: Text(
-                    product.condition,
-                  ),
+                  child: Text(product.condition),
                 ),
               ),
             ],
@@ -58,14 +62,14 @@ class ProductBox extends StatelessWidget {
             product.term,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: textTheme.bodySmall,
+            style: termStyle,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MoneyText(
                 money: product.costs,
-                style: textTheme.labelSmall,
+                style: costStyle,
               ),
               Visibility(
                 visible: product.size.trim().isNotEmpty,

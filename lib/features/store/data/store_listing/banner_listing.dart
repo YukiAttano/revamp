@@ -25,6 +25,7 @@ class BannerListing implements StoreListing {
 
   factory BannerListing.fromJson(Map<String, dynamic> json) => _$BannerListingFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$BannerListingToJson(this);
 }
 

@@ -48,34 +48,27 @@ class _BannerListState extends State<_BannerList> with SingleTickerProviderState
 
   @override
   Widget build(BuildContext context) {
+
+    const EdgeInsets padding = EdgeInsets.only(right: 8);
+
     return SizedBox(
       height: widget.height,
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: TabBarView(
-              controller: _controller,
-              children: List.generate(
-                widget.banner.length,
-                (index) {
-                  return Padding(
-                    padding: EdgeInsets.only(right: 8),
-                    child: BannerBox(
-                      banner: widget.banner[index],
-                    ),
-                  );
-                },
+      child: TabBarView(
+        controller: _controller,
+        children: List.generate(
+          widget.banner.length,
+          (index) {
+            return Padding(
+              padding: padding,
+              child: BannerBox(
+                banner: widget.banner[index],
+                child: TabPageSelector(
+                  controller: _controller,
+                ),
               ),
-            ),
-          ),
-          Positioned(
-            bottom: 12,
-            right: 18,
-            child: TabPageSelector(
-              controller: _controller,
-            ),
-          ),
-        ],
+            );
+          },
+        ),
       ),
     );
   }

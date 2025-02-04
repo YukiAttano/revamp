@@ -24,11 +24,13 @@ class CategoryBox extends StatelessWidget {
     ColorScheme scheme = theme.colorScheme;
     TextTheme textTheme = theme.textTheme;
 
+    const BorderRadius radius = BorderRadius.all(Radius.circular(18));
+
     return SizedBox(
       height: category.height ?? categoryHeight,
       width: category.width ?? categoryWidth,
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(18)),
+        borderRadius: radius,
         child: Stack(
           children: [
             Positioned.fill(

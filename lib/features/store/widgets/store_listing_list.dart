@@ -26,7 +26,6 @@ class StoreListingList extends StatelessWidget {
   Widget build(BuildContext context) {
     var l = listings;
 
-    // TODO(Alex): check if switch case detects subtype of list properly if .fromJson is used to generate lists
     switch (l) {
       case List<ProductListing>():
         return StoreProductList(
