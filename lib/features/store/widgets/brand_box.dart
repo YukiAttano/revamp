@@ -26,6 +26,7 @@ class BrandBox extends StatelessWidget {
     TextTheme textTheme = theme.textTheme;
 
     const BorderRadius radius = BorderRadius.all(Radius.circular(8));
+    const EdgeInsets tagPadding = EdgeInsets.symmetric(horizontal: 4, vertical: 2);
 
     return SizedBox(
       height: brands.height ?? categoryHeight,
@@ -37,16 +38,17 @@ class BrandBox extends StatelessWidget {
             Positioned.fill(
               child: ColoredBox(color: Colors.grey.shade300),
             ),
-            // TODO(Alex): Fix tag exceeding max width
-            Positioned(
-              left: 4,
-              bottom: 4,
-              child: Tag(
-                style: TagStyle.lowEmphasis(context, brightForeground: true),
-                child: Text(
-                  brands.title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: tagPadding,
+                child: Tag(
+                  style: TagStyle.lowEmphasis(context, brightForeground: true),
+                  child: Text(
+                    brands.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
             ),

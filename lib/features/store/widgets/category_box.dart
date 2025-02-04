@@ -25,6 +25,7 @@ class CategoryBox extends StatelessWidget {
     TextTheme textTheme = theme.textTheme;
 
     const BorderRadius radius = BorderRadius.all(Radius.circular(18));
+    const EdgeInsets padding = EdgeInsets.symmetric(horizontal: 4, vertical: 2);
 
     return SizedBox(
       height: category.height ?? categoryHeight,
@@ -37,15 +38,17 @@ class CategoryBox extends StatelessWidget {
               child: ColoredBox(color: Colors.grey.shade300),
             ),
             // TODO(Alex): constrain size of tag to not reach outside of the box
-            Positioned(
-              left: 8,
-              bottom: 8,
-              child: Tag(
-                style: TagStyle.lowEmphasis(context, brightForeground: true),
-                child: Text(
-                  category.title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: padding,
+                child: Tag(
+                  style: TagStyle.lowEmphasis(context, brightForeground: true),
+                  child: Text(
+                    category.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
             ),
