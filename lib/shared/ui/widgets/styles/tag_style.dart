@@ -66,18 +66,20 @@ class TagStyle extends ThemeExtension<TagStyle> {
     );
   }
 
-   factory TagStyle.lowEmphasis(BuildContext context) {
+   factory TagStyle.lowEmphasis(BuildContext context, {bool brightForeground = false}) {
     ThemeData theme = Theme.of(context);
     ColorScheme scheme = theme.colorScheme;
+    TextTheme textTheme = theme.textTheme;
+
+    Color? fgColor = brightForeground ? Colors.white : null;
 
     return TagStyle(
       padding: const EdgeInsets.symmetric(horizontal: 6),
-      textStyle: Theme.of(context).textTheme.labelSmall,
+      textStyle: textTheme.labelSmall?.copyWith(color: fgColor),
       color: Colors.grey,
+      iconColor: fgColor,
     );
   }
-
-
 
   factory TagStyle.rect() {
     const EdgeInsets padding = EdgeInsets.all(6);

@@ -41,14 +41,11 @@ class CategoryBox extends StatelessWidget {
               left: 8,
               bottom: 8,
               child: Tag(
-                style: TagStyle.lowEmphasis(context),
+                style: TagStyle.lowEmphasis(context, brightForeground: true),
                 child: Text(
                   category.title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: textTheme.labelSmall?.copyWith(
-                    color: scheme.surface,
-                  ),
                 ),
               ),
             ),

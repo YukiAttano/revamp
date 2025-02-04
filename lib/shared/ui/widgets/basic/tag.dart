@@ -51,8 +51,8 @@ class Tag extends StatelessWidget {
           padding: s.padding ?? EdgeInsets.zero,
           child: IconTheme(
             data: i.merge(IconThemeData(color: s.iconColor)),
-            child: DefaultTextStyle(
-              style: s.textStyle ?? DefaultTextStyle.of(context).style,
+            child: DefaultTextStyle.merge(
+              style: s.textStyle,
               child: child,
             ),
           ),

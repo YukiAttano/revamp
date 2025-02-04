@@ -42,14 +42,11 @@ class BrandBox extends StatelessWidget {
               left: 4,
               bottom: 4,
               child: Tag(
-                style: TagStyle(color: Colors.grey.withAlpha(100)),
+                style: TagStyle.lowEmphasis(context, brightForeground: true),
                 child: Text(
                   brands.title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: textTheme.labelSmall?.copyWith(
-                    color: scheme.surface,
-                  ),
                 ),
               ),
             ),
